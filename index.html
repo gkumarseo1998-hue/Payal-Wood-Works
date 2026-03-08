@@ -3,535 +3,567 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Payal Wood Works | Best Carpenters in Delhi</title>
-<meta name="description" content="Payal Wood Works — Best Carpenters in Delhi. Custom furniture, door repair, wardrobe installation, modular kitchen, bed assembly & all carpentry services. Budh Vihar, Delhi. Call 9899925451."/>
+<title>Payal Wood Works | Best Carpenters in Delhi | Budh Vihar</title>
+<meta name="description" content="Payal Wood Works — Best Carpenters in Delhi. Expert carpentry services: custom furniture, door repair, wardrobe installation, modular kitchen, bed assembly. Budh Vihar, Delhi-110086. Call 9899925451."/>
+<meta name="keywords" content="best carpenters in delhi, carpenter budh vihar, carpenter rohini, carpenter mangolpuri, carpenter nangloi, custom furniture delhi, door repair delhi, wardrobe installation delhi, modular kitchen carpenter delhi"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
-/* ═══ RESET & TOKENS ═══════════════════════════════ */
+/* ══════════════════════════════════════════
+   RESET & DESIGN TOKENS
+══════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --lime:#d3fc03;
   --yellow:#f8fc03;
   --red:#fc3003;
   --black:#000;
-  --ink:#0a0805;
-  --ink2:#111008;
-  --ink3:#1a1510;
-  --ink4:#231e16;
-  --ink5:#2e271d;
-  --warm:#f5ede0;
-  --warm2:#ede0cc;
+  /* warm dark ink tones - completely different from shiv shakti */
+  --ink:#09080a;
+  --ink2:#100f12;
+  --ink3:#18161b;
+  --ink4:#201e24;
+  --ink5:#28252d;
+  /* warm cream accents */
+  --cream:#f2ead8;
+  --cream2:#e8dcc4;
+  --amber:#c4962a;
   --white:#fff;
-  --muted:#8a7d6e;
-  --muted2:#5a5048;
-  --border:rgba(211,252,3,.09);
-  --border-warm:rgba(245,237,224,.07);
-  --serif:'Playfair Display',serif;
-  --sans:'Outfit',sans-serif;
-  --mono:'Courier Prime',monospace;
+  --muted:#7a6e85;
+  --muted2:#4a4254;
+  --b1:rgba(211,252,3,.08);
+  --b2:rgba(242,234,216,.06);
+  --b3:rgba(242,234,216,.1);
+  --disp:'Cormorant Garamond',serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'Inconsolata',monospace;
 }
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--warm);font-family:var(--sans);overflow-x:hidden;cursor:none}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);overflow-x:hidden;cursor:none}
 ::selection{background:var(--lime);color:var(--black)}
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--ink)}
 ::-webkit-scrollbar-thumb{background:var(--lime)}
 a{text-decoration:none;color:inherit}
 
-/* ═══ CURSOR ══════════════════════════════════════ */
-#cur{position:fixed;width:8px;height:8px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference}
-#cur2{position:fixed;width:30px;height:30px;border:1px solid rgba(211,252,3,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease;mix-blend-mode:difference}
+/* ══════════════════════════════════════════
+   CURSOR
+══════════════════════════════════════════ */
+#dot{position:fixed;width:7px;height:7px;background:var(--lime);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+#ring{position:fixed;width:26px;height:26px;border:1.5px solid rgba(211,252,3,.55);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .1s,top .1s}
 
-/* ═══ NAV ══════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   NAV
+══════════════════════════════════════════ */
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1rem 3.5rem;
-  background:rgba(10,8,5,.93);
-  backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border-warm);
+  padding:1rem 4rem;
+  background:rgba(9,8,10,.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--b2);
+  transition:padding .3s;
 }
-.nav-logo{display:flex;flex-direction:column;line-height:1.1}
-.nav-logo-main{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--lime);letter-spacing:.5px}
-.nav-logo-sub{font-family:var(--mono);font-size:.52rem;color:var(--muted);letter-spacing:3px;text-transform:uppercase;margin-top:.1rem}
-.nav-links{display:flex;gap:2.2rem;list-style:none}
-.nav-links a{
-  font-size:.7rem;font-weight:500;letter-spacing:2px;
-  text-transform:uppercase;color:var(--muted);transition:color .2s;
-}
+.nav-brand{line-height:1.15}
+.nav-name{font-family:var(--disp);font-size:1.3rem;font-weight:700;color:var(--lime);letter-spacing:.5px}
+.nav-sub{font-family:var(--mono);font-size:.5rem;letter-spacing:3px;color:var(--muted);text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.65rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--lime)}
-.nav-call{
-  display:flex;align-items:center;gap:.5rem;
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-email{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.5px;transition:color .2s}
+.nav-email:hover{color:var(--lime)}
+.nav-cta{
   background:var(--lime);color:var(--black);
-  padding:.55rem 1.4rem;
-  font-family:var(--sans);font-size:.78rem;font-weight:700;
-  letter-spacing:1px;text-transform:uppercase;
+  padding:.55rem 1.5rem;font-size:.72rem;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
   transition:background .2s,transform .15s;
+  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
 }
-.nav-call:hover{background:var(--yellow);transform:scale(1.03)}
+.nav-cta:hover{background:var(--yellow);transform:translateY(-1px)}
 
-/* ═══ HERO ══════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
 #hero{
-  min-height:100vh;
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;
-  padding:8rem 3.5rem 5rem;
+  min-height:100vh;padding:9rem 4rem 5rem;
+  display:grid;grid-template-columns:1.15fr 1fr;
+  gap:5rem;align-items:center;
   position:relative;overflow:hidden;
-  gap:4rem;
 }
-/* Hatching texture */
-#hero::before{
+/* diagonal ruled lines texture */
+#hero::after{
   content:'';position:absolute;inset:0;
-  background-image:repeating-linear-gradient(
-    45deg,
-    rgba(245,237,224,.012) 0px,
-    rgba(245,237,224,.012) 1px,
-    transparent 1px,transparent 12px
-  );
-  pointer-events:none;
+  background:repeating-linear-gradient(
+    -55deg,transparent,transparent 30px,
+    rgba(211,252,3,.012) 30px,rgba(211,252,3,.012) 31px
+  );pointer-events:none;
 }
-.hero-amber{
-  position:absolute;top:0;right:0;bottom:0;width:50%;
-  background:linear-gradient(135deg,rgba(211,252,3,.02) 0%,rgba(252,48,3,.015) 100%);
-  pointer-events:none;
-}
+.hero-glow{position:absolute;top:-20%;left:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(211,252,3,.05) 0%,transparent 60%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-10%;right:5%;width:500px;height:500px;background:radial-gradient(circle,rgba(252,48,3,.04) 0%,transparent 60%);pointer-events:none}
+
 .hero-left{position:relative;z-index:1}
-.hero-tag{
+.hero-badge{
   display:inline-flex;align-items:center;gap:.6rem;
-  font-family:var(--mono);font-size:.65rem;color:var(--lime);
-  letter-spacing:2.5px;text-transform:uppercase;margin-bottom:2rem;
-  padding:.35rem .9rem;border:1px solid rgba(211,252,3,.2);
-  background:rgba(211,252,3,.04);
+  font-family:var(--mono);font-size:.62rem;letter-spacing:2px;
+  text-transform:uppercase;color:var(--lime);
+  border:1px solid rgba(211,252,3,.18);padding:.3rem .85rem;
+  background:rgba(211,252,3,.04);margin-bottom:2.2rem;
   animation:fadeUp .7s ease both;
 }
-.hero-tag-dot{width:5px;height:5px;background:var(--lime);border-radius:50%;animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.6)}}
-.hero-h1{
-  font-family:var(--serif);font-weight:900;
-  font-size:clamp(3.2rem,6.5vw,7.5rem);
-  line-height:.93;
-  color:var(--warm);
-  animation:fadeUp .8s .08s ease both;
+.badge-dot{width:5px;height:5px;background:var(--red);border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+h1{
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(3.5rem,7vw,8.5rem);
+  line-height:.9;color:var(--cream);
+  animation:fadeUp .8s .06s ease both;
 }
-.hero-h1 em{font-style:italic;color:var(--lime);display:block}
-.hero-h1 .red{color:var(--red)}
-.hero-by{
-  font-family:var(--mono);font-size:.72rem;color:var(--muted);
-  letter-spacing:2px;margin:1.8rem 0;
-  border-left:2px solid var(--lime);padding-left:.8rem;
-  animation:fadeUp .8s .16s ease both;
+h1 .italic{font-style:italic;color:var(--lime)}
+h1 .red{color:var(--red)}
+.hero-owner{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:2px;
+  color:var(--muted);margin:2rem 0;
+  padding-left:1rem;border-left:2px solid var(--lime);
+  animation:fadeUp .8s .14s ease both;
 }
 .hero-desc{
-  font-size:.97rem;line-height:1.85;color:var(--muted);
-  max-width:460px;margin-bottom:2.5rem;font-weight:300;
-  animation:fadeUp .8s .24s ease both;
+  font-size:.95rem;line-height:1.88;color:var(--muted);
+  max-width:480px;margin-bottom:2.8rem;font-weight:300;
+  animation:fadeUp .8s .22s ease both;
 }
-.hero-desc strong{color:var(--warm);font-weight:500}
+.hero-desc strong{color:var(--cream);font-weight:500}
 .hero-btns{
   display:flex;gap:1rem;flex-wrap:wrap;
-  animation:fadeUp .8s .32s ease both;
+  animation:fadeUp .8s .3s ease both;
 }
-.btn-lime{
+.btn-fill{
   background:var(--lime);color:var(--black);
-  padding:.9rem 2.4rem;font-weight:700;font-size:.85rem;
+  padding:.9rem 2.3rem;font-weight:600;font-size:.82rem;
   letter-spacing:1.5px;text-transform:uppercase;
-  display:inline-flex;align-items:center;gap:.5rem;
-  transition:all .2s;border:none;
-  clip-path:polygon(0 0,calc(100%-8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100%-8px));
+  transition:background .2s,transform .15s;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
 }
-.btn-lime:hover{background:var(--yellow);transform:translateY(-2px)}
-.btn-border{
-  border:1px solid rgba(245,237,224,.2);color:var(--warm);
-  padding:.9rem 2.4rem;font-weight:500;font-size:.85rem;
+.btn-fill:hover{background:var(--yellow);transform:translateY(-2px)}
+.btn-ghost{
+  border:1px solid rgba(242,234,216,.2);color:var(--cream);
+  padding:.9rem 2.3rem;font-weight:400;font-size:.82rem;
   letter-spacing:1.5px;text-transform:uppercase;background:none;
-  display:inline-flex;align-items:center;gap:.5rem;
-  transition:all .2s;
-  clip-path:polygon(0 0,calc(100%-8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100%-8px));
+  transition:border-color .2s,color .2s;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
 }
-.btn-border:hover{border-color:var(--lime);color:var(--lime)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
 
-/* hero right — big stat grid */
+/* hero right stats */
 .hero-right{
   position:relative;z-index:1;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:1px;background:rgba(245,237,224,.06);
-  border:1px solid rgba(245,237,224,.06);
-  animation:fadeUp .9s .2s ease both;
+  display:flex;flex-direction:column;gap:1px;
+  background:var(--b2);border:1px solid var(--b2);
+  animation:fadeUp .9s .18s ease both;
 }
-.hero-stat{
-  background:var(--ink2);padding:2.2rem;
-  position:relative;overflow:hidden;
-  transition:background .3s;
+.hstat{
+  background:var(--ink2);padding:2rem 2.5rem;
+  display:flex;align-items:center;gap:1.5rem;
+  transition:background .25s;
+  border-bottom:1px solid var(--b2);
 }
-.hero-stat:hover{background:var(--ink3)}
-.hero-stat::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:2px;background:var(--lime);
-  transform:scaleX(0);transform-origin:left;transition:transform .4s;
+.hstat:last-child{border-bottom:none}
+.hstat:hover{background:var(--ink3)}
+.hstat-val{
+  font-family:var(--disp);font-size:3.2rem;font-weight:700;
+  color:var(--lime);line-height:1;min-width:90px;
 }
-.hero-stat:hover::after{transform:scaleX(1)}
-.hs-val{
-  font-family:var(--serif);font-size:3.5rem;font-weight:900;
-  color:var(--lime);line-height:1;margin-bottom:.4rem;
-}
-.hs-val.red{color:var(--red)}
-.hs-lbl{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:2.5px;text-transform:uppercase}
-/* address block */
+.hstat-val.r{color:var(--red)}
+.hstat-lbl{font-size:.78rem;color:var(--muted);line-height:1.5;font-weight:300}
+.hstat-lbl strong{display:block;color:var(--cream);font-size:.9rem;font-weight:500;margin-bottom:.15rem}
+/* address card under stats */
 .hero-addr{
-  background:var(--ink2);padding:2rem;
-  border-top:1px solid rgba(245,237,224,.06);
-  grid-column:1/-1;
-  display:flex;align-items:center;justify-content:space-between;gap:2rem;
-  flex-wrap:wrap;
+  background:var(--lime);padding:1.8rem 2.5rem;
+  border-top:none;
 }
-.hero-addr-text{font-size:.8rem;color:var(--muted);line-height:1.7}
-.hero-addr-text strong{color:var(--warm);display:block;font-size:.85rem;margin-bottom:.2rem}
-.hero-addr-phone{
-  font-family:var(--serif);font-size:1.6rem;font-weight:700;
-  color:var(--lime);white-space:nowrap;
+.hero-addr-title{
+  font-family:var(--mono);font-size:.55rem;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(0,0,0,.45);margin-bottom:.5rem;
 }
-.hero-addr-phone span{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:2px;display:block;margin-bottom:.2rem;text-transform:uppercase}
+.hero-addr-line{font-size:.82rem;font-weight:600;color:var(--black);line-height:1.6}
+.hero-addr-contacts{
+  display:flex;gap:1.5rem;margin-top:.7rem;flex-wrap:wrap;
+}
+.hero-addr-contacts a{
+  font-family:var(--mono);font-size:.72rem;font-weight:700;
+  color:var(--black);transition:opacity .2s;
+}
+.hero-addr-contacts a:hover{opacity:.65}
 
-/* ═══ TICKER ══════════════════════════════════════ */
-.ticker{
-  background:var(--lime);padding:.65rem 0;
-  overflow:hidden;white-space:nowrap;
-}
-.ticker-inner{display:inline-block;animation:mq 28s linear infinite}
-.ticker-inner s{
-  font-family:var(--sans);font-size:.85rem;font-weight:700;
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════════════════════════════════════════
+   TICKER
+══════════════════════════════════════════ */
+.ticker{overflow:hidden;background:var(--red);padding:.6rem 0}
+.ticker-track{display:inline-flex;animation:slide 30s linear infinite;white-space:nowrap}
+.ticker-track s{
+  font-family:var(--mono);font-size:.82rem;font-weight:700;
   color:var(--black);letter-spacing:3px;text-transform:uppercase;
-  margin:0 1.5rem;text-decoration:none;
+  margin:0 1.8rem;text-decoration:none;
 }
-.ticker-inner b{color:var(--red);margin:0 .6rem;font-style:normal}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-track b{color:rgba(0,0,0,.3);margin:0 .4rem;font-style:normal}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ═══ SECTION UTILS ══════════════════════════════ */
-section{padding:6rem 3.5rem}
+/* ══════════════════════════════════════════
+   SECTION COMMON
+══════════════════════════════════════════ */
+section{padding:6.5rem 4rem}
 .eyebrow{
-  font-family:var(--mono);font-size:.65rem;
-  color:var(--lime);letter-spacing:3px;text-transform:uppercase;
-  display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:3px;
+  text-transform:uppercase;color:var(--lime);
+  display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;
 }
-.eyebrow::before{content:'{ }';font-size:.55rem;color:var(--red)}
-.sec-title{
-  font-family:var(--serif);font-weight:900;
-  font-size:clamp(2.4rem,4.5vw,5.5rem);
-  line-height:.95;margin-bottom:.8rem;color:var(--warm);
+.eyebrow::before{content:'//';color:var(--red);font-size:.65rem}
+.sec-h{
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(2.5rem,4.5vw,5.5rem);line-height:.93;
+  color:var(--cream);
 }
-.sec-title .lime{color:var(--lime)}
-.sec-title .red{color:var(--red)}
-.sec-title em{font-style:italic}
-.sec-sub{color:var(--muted);max-width:560px;line-height:1.85;font-size:.93rem;margin-bottom:3rem;font-weight:300}
+.sec-h em{font-style:italic;color:var(--lime)}
+.sec-h .red{color:var(--red)}
+.sec-sub{
+  font-size:.93rem;line-height:1.9;color:var(--muted);
+  max-width:560px;margin-top:.7rem;font-weight:300;
+}
 
-/* ═══ ABOUT ══════════════════════════════════════ */
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.32s}
+
+/* ══════════════════════════════════════════
+   ABOUT
+══════════════════════════════════════════ */
 #about{background:var(--ink2)}
-.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
-.about-body p{color:var(--muted);font-size:.93rem;line-height:1.9;margin-bottom:1.2rem;font-weight:300}
-.about-body strong{color:var(--warm);font-weight:500}
-.about-list{list-style:none;margin-top:2.2rem}
-.about-list li{
-  display:flex;gap:.8rem;padding:.65rem 0;
-  border-bottom:1px solid var(--border-warm);
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.about-text p{font-size:.92rem;line-height:1.95;color:var(--muted);margin-bottom:1.2rem;font-weight:300}
+.about-text p strong{color:var(--cream);font-weight:500}
+/* notice block */
+.about-notice{
+  background:rgba(211,252,3,.05);border:1px solid rgba(211,252,3,.15);
+  padding:1.2rem 1.5rem;margin:1.8rem 0;
+  font-family:var(--mono);font-size:.72rem;color:var(--lime);
+  letter-spacing:.5px;line-height:1.7;
+}
+.about-notice::before{content:'ℹ  ';font-size:.9rem}
+.about-points{list-style:none;margin-top:1.5rem}
+.about-points li{
+  display:flex;gap:.8rem;padding:.6rem 0;
+  border-bottom:1px solid var(--b2);
   font-size:.86rem;color:var(--muted);align-items:flex-start;
   transition:color .2s;
 }
-.about-list li:hover{color:var(--warm)}
-.about-list li::before{content:'→';color:var(--lime);flex-shrink:0;margin-top:.05rem}
-/* right panel */
-.about-panel{
-  background:var(--ink3);
-  border:1px solid var(--border-warm);
-  overflow:hidden;
-}
-.about-panel-head{
-  background:var(--lime);padding:1.5rem 2rem;
-  font-family:var(--serif);font-size:1.3rem;font-weight:700;
-  color:var(--black);letter-spacing:.3px;
-}
-.about-panel-head span{font-family:var(--mono);font-size:.6rem;color:rgba(0,0,0,.5);letter-spacing:2px;display:block;text-transform:uppercase;margin-bottom:.3rem}
-.about-metrics{display:flex;flex-direction:column;gap:1px;background:var(--border-warm)}
-.apm{
-  background:var(--ink3);padding:1.6rem 2rem;
-  display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:center;
-  transition:background .2s;
-}
-.apm:hover{background:var(--ink4)}
-.apm-icon{font-size:1.8rem}
-.apm-val{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--lime);line-height:1}
-.apm-val.red{color:var(--red)}
-.apm-lbl{font-size:.73rem;color:var(--muted);margin-top:.15rem;font-weight:300}
+.about-points li:hover{color:var(--cream)}
+.about-points li::before{content:'→';color:var(--lime);flex-shrink:0;margin-top:.04rem}
 
-/* ═══ SERVICES ═══════════════════════════════════ */
+/* right owner card */
+.about-card{background:var(--ink3);border:1px solid var(--b2);overflow:hidden}
+.ac-head{
+  background:var(--lime);padding:1.6rem 2rem;
+  font-family:var(--disp);font-size:1.45rem;font-weight:700;
+  color:var(--black);line-height:1.2;
+}
+.ac-head small{font-family:var(--mono);font-size:.55rem;letter-spacing:2.5px;color:rgba(0,0,0,.45);display:block;text-transform:uppercase;margin-bottom:.3rem}
+.ac-metrics{display:flex;flex-direction:column;gap:1px;background:var(--b2)}
+.acm{background:var(--ink3);padding:1.5rem 2rem;display:grid;grid-template-columns:56px 1fr;gap:1rem;align-items:center;transition:background .2s}
+.acm:hover{background:var(--ink4)}
+.acm-icon{font-size:1.7rem}
+.acm-num{font-family:var(--disp);font-size:2.1rem;font-weight:700;color:var(--lime);line-height:1}
+.acm-num.r{color:var(--red)}
+.acm-lbl{font-size:.73rem;color:var(--muted);margin-top:.12rem;font-weight:300;line-height:1.5}
+/* contact strip inside card */
+.ac-contact{
+  padding:1.5rem 2rem;
+  border-top:1px solid var(--b2);
+  display:flex;flex-direction:column;gap:.55rem;
+}
+.acc-row{display:flex;align-items:center;gap:.7rem;font-size:.8rem;color:var(--muted)}
+.acc-row span{color:var(--lime);font-size:.95rem}
+.acc-row a{color:var(--lime);transition:color .2s}
+.acc-row a:hover{color:var(--yellow)}
+
+/* ══════════════════════════════════════════
+   SERVICES
+══════════════════════════════════════════ */
 #services{background:var(--ink)}
-.svc-intro{
-  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;
-  margin-bottom:3.5rem;
+.svc-header{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
+  align-items:end;margin-bottom:4rem;
 }
 .svc-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border-warm);
-  border:1px solid var(--border-warm);
+  gap:1px;background:var(--b2);border:1px solid var(--b2);
 }
-.svc-card{
-  background:var(--ink);padding:2.4rem;
-  position:relative;transition:background .3s;overflow:hidden;
+.sc{
+  background:var(--ink);padding:2.5rem;
+  position:relative;transition:background .3s;
+  overflow:hidden;
 }
-.svc-card:hover{background:var(--ink2)}
-.svc-card::before{
+.sc:hover{background:var(--ink2)}
+.sc::before{
   content:'';position:absolute;top:0;left:0;right:0;
-  height:2px;background:linear-gradient(90deg,var(--lime),var(--red));
+  height:2px;background:linear-gradient(90deg,var(--lime),transparent);
   transform:scaleX(0);transform-origin:left;transition:transform .4s;
 }
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-n{font-family:var(--mono);font-size:.58rem;color:rgba(211,252,3,.35);letter-spacing:2px;margin-bottom:.7rem}
-.svc-icon{font-size:2rem;margin-bottom:.7rem;display:block}
-.svc-name{
-  font-family:var(--serif);font-size:1.3rem;font-weight:700;
-  color:var(--warm);margin-bottom:.2rem;
+.sc:hover::before{transform:scaleX(1)}
+.sc-num{font-family:var(--mono);font-size:.55rem;color:rgba(211,252,3,.3);letter-spacing:2px;margin-bottom:.7rem}
+.sc-ico{font-size:2rem;margin-bottom:.7rem;display:block}
+.sc-name{font-family:var(--disp);font-size:1.35rem;font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:.25rem}
+.sc-tag{font-family:var(--mono);font-size:.57rem;color:var(--red);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:1.1rem}
+.sc-desc{font-size:.81rem;color:var(--muted);line-height:1.82;margin-bottom:1.5rem;font-weight:300}
+.sc-works{list-style:none}
+.sc-works li{
+  font-size:.75rem;color:var(--muted2);padding:.28rem 0 .28rem .85rem;
+  position:relative;border-bottom:1px solid rgba(242,234,216,.04);
 }
-.svc-tag{
-  font-family:var(--mono);font-size:.58rem;color:var(--red);
-  letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;display:block;
-}
-.svc-desc{font-size:.81rem;color:var(--muted);line-height:1.78;margin-bottom:1.4rem;font-weight:300}
-.svc-items{list-style:none}
-.svc-items li{
-  font-size:.76rem;color:var(--muted2);
-  padding:.3rem 0;padding-left:.9rem;
-  position:relative;border-bottom:1px solid rgba(245,237,224,.04);
-}
-.svc-items li:last-child{border:none}
-.svc-items li::before{content:'›';position:absolute;left:0;color:var(--lime)}
+.sc-works li:last-child{border:none}
+.sc-works li::before{content:'›';position:absolute;left:0;color:var(--lime)}
 
-/* ═══ WHY CHOOSE ══════════════════════════════════ */
+/* ══════════════════════════════════════════
+   WHY CHOOSE
+══════════════════════════════════════════ */
 #why{background:var(--ink2)}
-.why-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:3.5rem}
-.why-cards{
+.why-header{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;margin-bottom:4rem}
+.why-grid{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border-warm);border:1px solid var(--border-warm);
+  gap:1px;background:var(--b2);border:1px solid var(--b2);
 }
-.why-card{
-  background:var(--ink2);padding:2rem;
+.wc{
+  background:var(--ink2);padding:2.2rem;
   transition:background .3s;position:relative;
 }
-.why-card:hover{background:var(--ink3)}
-.why-card::after{
+.wc:hover{background:var(--ink3)}
+.wc::after{
   content:'';position:absolute;left:0;top:0;bottom:0;
-  width:2px;background:var(--lime);transform:scaleY(0);
-  transform-origin:top;transition:transform .35s;
+  width:2px;background:var(--lime);
+  transform:scaleY(0);transform-origin:top;transition:transform .35s;
 }
-.why-card:hover::after{transform:scaleY(1)}
-.why-icon{font-size:1.9rem;margin-bottom:.8rem;display:block}
-.why-title{
-  font-family:var(--serif);font-size:1.05rem;font-weight:700;
-  color:var(--warm);margin-bottom:.55rem;
-}
-.why-desc{font-size:.81rem;color:var(--muted);line-height:1.75;font-weight:300}
+.wc:hover::after{transform:scaleY(1)}
+.wc-ico{font-size:1.9rem;margin-bottom:.8rem;display:block}
+.wc-title{font-family:var(--disp);font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:.5rem}
+.wc-desc{font-size:.81rem;color:var(--muted);line-height:1.78;font-weight:300}
 
-/* ═══ REVIEWS ══════════════════════════════════════ */
-#reviews{background:var(--ink)}
-.rev-intro{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end;margin-bottom:3rem}
-.rev-rating-box{
-  background:var(--lime);padding:2rem 2.5rem;text-align:center;flex-shrink:0;
+/* ══════════════════════════════════════════
+   REVIEWS — dual marquee rows
+══════════════════════════════════════════ */
+#reviews{background:var(--ink);overflow:hidden;padding-left:0;padding-right:0}
+.rev-head{padding:0 4rem 3rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end}
+.rev-rating{
+  background:var(--lime);padding:1.8rem 2.4rem;text-align:center;flex-shrink:0;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
 }
-.rev-big-num{font-family:var(--serif);font-size:4.5rem;font-weight:900;color:var(--black);line-height:1}
-.rev-big-stars{font-size:1.1rem;color:var(--red);letter-spacing:3px;margin:.3rem 0}
-.rev-big-lbl{font-family:var(--mono);font-size:.6rem;color:rgba(0,0,0,.55);letter-spacing:2px;text-transform:uppercase}
-/* cards grid */
-.rev-grid{
-  display:grid;grid-template-columns:repeat(5,1fr);
-  gap:1px;background:var(--border-warm);border:1px solid var(--border-warm);
+.rev-big{font-family:var(--disp);font-size:4.2rem;font-weight:700;color:var(--black);line-height:1}
+.rev-stars{font-size:1rem;color:var(--red);letter-spacing:4px;margin:.25rem 0}
+.rev-rlbl{font-family:var(--mono);font-size:.58rem;color:rgba(0,0,0,.45);letter-spacing:2px;text-transform:uppercase}
+.rev-row{display:flex;gap:1px;margin-bottom:1px;overflow:visible}
+.rev-track{display:flex;gap:1px;animation:revL 38s linear infinite;white-space:nowrap}
+.rev-track.rev-right{animation:revR 42s linear infinite}
+@keyframes revL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes revR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.rev-row:hover .rev-track{animation-play-state:paused}
+.rcard{
+  background:var(--ink2);padding:1.8rem 2rem;
+  width:310px;flex-shrink:0;
+  border:1px solid var(--b2);
+  position:relative;
+  display:inline-flex;flex-direction:column;
+  transition:background .2s;
+  vertical-align:top;white-space:normal;
 }
-.rev-card{
-  background:var(--ink);padding:2rem;
-  transition:background .2s;position:relative;
+.rcard:hover{background:var(--ink3)}
+.rcard-stars{color:var(--yellow);font-size:.85rem;letter-spacing:2px;margin-bottom:.8rem}
+.rcard-text{
+  font-family:var(--disp);font-style:italic;font-size:.88rem;
+  color:var(--cream);line-height:1.75;margin-bottom:1rem;flex:1;
+  border-left:2px solid rgba(211,252,3,.25);padding-left:.8rem;
 }
-.rev-card:hover{background:var(--ink2)}
-.rev-stars{color:var(--yellow);font-size:.85rem;letter-spacing:2px;margin-bottom:.9rem}
-.rev-quote{
-  font-family:var(--serif);font-size:.88rem;font-style:italic;
-  color:var(--warm);line-height:1.75;margin-bottom:1.2rem;
-  position:relative;padding-left:1rem;
-  border-left:2px solid rgba(211,252,3,.3);
-}
-.rev-name{
-  font-family:var(--sans);font-size:.75rem;font-weight:600;
-  color:var(--lime);letter-spacing:.5px;
-}
-.rev-openq{
-  position:absolute;top:1.5rem;right:1.5rem;
-  font-family:var(--serif);font-size:3rem;color:rgba(211,252,3,.06);
-  line-height:1;
+.rcard-name{font-family:var(--mono);font-size:.68rem;color:var(--lime);letter-spacing:1px}
+.rcard-quote{
+  position:absolute;top:1.2rem;right:1.2rem;
+  font-family:var(--disp);font-size:3.5rem;line-height:1;
+  color:rgba(211,252,3,.06);pointer-events:none;
 }
 
-/* ═══ SERVICE AREAS ══════════════════════════════ */
+/* ══════════════════════════════════════════
+   SERVICE AREAS
+══════════════════════════════════════════ */
 #areas{background:var(--ink2)}
-.areas-wrap{
-  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+.areas-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:6rem;align-items:center}
+.area-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.atag{
+  border:1px solid rgba(211,252,3,.15);
+  background:rgba(211,252,3,.05);
+  color:rgba(211,252,3,.7);
+  font-family:var(--mono);font-size:.63rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+  padding:.35rem .85rem;transition:all .2s;
 }
-.areas-list{
-  display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;
+.atag:hover{background:rgba(211,252,3,.12);color:var(--lime);border-color:rgba(211,252,3,.35)}
+/* contact block right */
+.areas-contact{display:flex;flex-direction:column;gap:1px;background:var(--b2);border:1px solid var(--b2)}
+.aci{background:var(--ink2);padding:1.8rem 2rem;transition:background .2s}
+.aci:hover{background:var(--ink3)}
+.aci-label{font-family:var(--mono);font-size:.55rem;color:var(--lime);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.4rem}
+.aci-val{font-family:var(--disp);font-size:1.25rem;font-weight:700;color:var(--cream);line-height:1.35}
+.aci-val a{color:var(--lime);transition:color .2s}
+.aci-val a:hover{color:var(--yellow)}
+.aci-sub{font-size:.77rem;color:var(--muted);margin-top:.25rem;font-weight:300;line-height:1.65}
+.aci-cta{
+  background:var(--lime);padding:1.8rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  transition:background .2s;
 }
-.area-tag{
-  background:rgba(211,252,3,.06);border:1px solid rgba(211,252,3,.14);
-  color:rgba(211,252,3,.7);font-family:var(--mono);font-size:.65rem;
-  letter-spacing:1.5px;text-transform:uppercase;padding:.35rem .8rem;
-  transition:all .2s;
-}
-.area-tag:hover{background:rgba(211,252,3,.12);color:var(--lime)}
-.areas-cta-block{
-  background:var(--ink3);border:1px solid var(--border-warm);padding:2.5rem;
-}
-.acb-label{font-family:var(--mono);font-size:.62rem;color:var(--lime);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
-.acb-name{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--warm);margin-bottom:1.2rem}
-.acb-row{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.5rem}
-.acb-item{display:flex;align-items:center;gap:.7rem;font-size:.84rem;color:var(--muted)}
-.acb-item span{color:var(--lime);font-size:.9rem}
-.acb-btn{
-  background:var(--lime);color:var(--black);
-  padding:.9rem 2rem;font-weight:700;font-size:.82rem;
-  letter-spacing:1.5px;text-transform:uppercase;border:none;
-  display:inline-flex;align-items:center;gap:.5rem;
-  transition:background .2s;width:100%;justify-content:center;
-}
-.acb-btn:hover{background:var(--yellow)}
+.aci-cta:hover{background:var(--yellow)}
+.aci-cta-text{font-family:var(--disp);font-size:1.1rem;font-weight:700;color:var(--black)}
+.aci-cta-text small{font-family:var(--mono);font-size:.55rem;letter-spacing:2px;color:rgba(0,0,0,.45);display:block;text-transform:uppercase;margin-bottom:.15rem}
+.aci-cta-arrow{font-size:1.5rem;color:var(--black)}
 
-/* ═══ FAQ ═════════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   FAQ
+══════════════════════════════════════════ */
 #faq{background:var(--ink)}
-.faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.faq-accordion{}
-.fq{border-bottom:1px solid rgba(245,237,224,.07);overflow:hidden}
+.faq-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:6rem;align-items:start}
+.fq{border-bottom:1px solid rgba(242,234,216,.07)}
 .fq-q{
   display:flex;justify-content:space-between;align-items:flex-start;
-  padding:1.3rem 0;gap:1rem;cursor:none;
-  font-size:.93rem;font-weight:500;color:var(--warm);transition:color .2s;
+  padding:1.35rem 0;gap:1rem;cursor:none;
+  font-size:.93rem;font-weight:500;color:var(--cream);
+  transition:color .2s;
 }
 .fq-q:hover{color:var(--lime)}
-.fq-ico{color:var(--lime);font-family:var(--mono);font-size:1.1rem;flex-shrink:0;transition:transform .3s;line-height:1;margin-top:.05rem}
+.fq-ico{
+  color:var(--lime);font-family:var(--mono);font-size:1.1rem;
+  flex-shrink:0;transition:transform .3s;line-height:1.2;
+}
 .fq.open .fq-ico{transform:rotate(45deg)}
 .fq-a{
   max-height:0;overflow:hidden;
-  font-size:.85rem;color:var(--muted);line-height:1.82;font-weight:300;
+  font-size:.84rem;color:var(--muted);line-height:1.85;font-weight:300;
   transition:max-height .4s ease,padding .3s;
 }
-.fq.open .fq-a{max-height:260px;padding-bottom:1.4rem}
-/* right contact card */
-.faq-contact{display:flex;flex-direction:column;gap:1px;background:var(--border-warm)}
-.fci{background:var(--ink);padding:2rem;transition:background .2s}
-.fci:hover{background:var(--ink2)}
-.fci-lbl{font-family:var(--mono);font-size:.58rem;color:var(--lime);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.4rem}
-.fci-val{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--warm)}
-.fci-val a{color:var(--lime);transition:color .2s}
-.fci-val a:hover{color:var(--yellow)}
-.fci-sub{font-size:.78rem;color:var(--muted);margin-top:.3rem;font-weight:300;line-height:1.65}
+.fq.open .fq-a{max-height:250px;padding-bottom:1.5rem}
+/* right contact info */
+.faq-info{display:flex;flex-direction:column;gap:1px;background:var(--b2);border:1px solid var(--b2)}
+.fi{background:var(--ink);padding:1.8rem 2rem;transition:background .2s}
+.fi:hover{background:var(--ink2)}
+.fi-label{font-family:var(--mono);font-size:.55rem;color:var(--lime);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.4rem}
+.fi-val{font-family:var(--disp);font-size:1.2rem;font-weight:700;color:var(--cream);line-height:1.35}
+.fi-val a{color:var(--lime);transition:color .2s}
+.fi-val a:hover{color:var(--yellow)}
+.fi-sub{font-size:.77rem;color:var(--muted);margin-top:.25rem;font-weight:300;line-height:1.65}
 
-/* ═══ CONTACT CTA ════════════════════════════════ */
+/* ══════════════════════════════════════════
+   CONTACT CTA
+══════════════════════════════════════════ */
 #contact{
-  background:var(--lime);padding:7rem 3.5rem;
-  text-align:center;position:relative;overflow:hidden;
+  background:var(--lime);
+  padding:8rem 4rem;text-align:center;
+  position:relative;overflow:hidden;
 }
 #contact::before{
-  content:'WOODWORKS';
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-weight:900;
-  font-size:clamp(5rem,13vw,14rem);
-  color:rgba(0,0,0,.05);pointer-events:none;
+  content:'PAYAL WOOD WORKS';
+  position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(3.5rem,10vw,11rem);
+  color:rgba(0,0,0,.07);pointer-events:none;
   white-space:nowrap;letter-spacing:-.02em;
+  line-height:1;
 }
-.cta-eye{font-family:var(--mono);font-size:.65rem;color:rgba(0,0,0,.4);letter-spacing:3px;text-transform:uppercase;margin-bottom:.8rem;position:relative;z-index:1}
+.cta-eye{font-family:var(--mono);font-size:.6rem;color:rgba(0,0,0,.38);letter-spacing:3px;text-transform:uppercase;margin-bottom:.8rem;position:relative;z-index:1}
 .cta-h{
-  font-family:var(--serif);font-weight:900;
-  font-size:clamp(2.8rem,7vw,8rem);
-  color:var(--black);line-height:.93;
-  margin-bottom:1rem;position:relative;z-index:1;
-}
-.cta-h em{font-style:italic}
-.cta-sub{font-size:1rem;color:rgba(0,0,0,.5);margin-bottom:2.8rem;position:relative;z-index:1;font-weight:300}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.cta-btn-dark{
-  background:var(--black);color:var(--lime);
-  padding:1.1rem 2.8rem;font-weight:700;font-size:.85rem;
-  letter-spacing:1.5px;text-transform:uppercase;border:2px solid var(--black);
-  transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;
-  clip-path:polygon(0 0,calc(100%-8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100%-8px));
-}
-.cta-btn-dark:hover{background:transparent;color:var(--black)}
-.cta-btn-out{
-  background:transparent;color:var(--black);
-  padding:1.1rem 2.8rem;font-weight:600;font-size:.85rem;
-  letter-spacing:1.5px;text-transform:uppercase;
-  border:2px solid rgba(0,0,0,.25);
-  transition:all .2s;
-  clip-path:polygon(0 0,calc(100%-8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100%-8px));
-}
-.cta-btn-out:hover{border-color:var(--black);background:rgba(0,0,0,.07)}
-.cta-info{
-  display:flex;gap:3.5rem;justify-content:center;flex-wrap:wrap;
-  margin-top:4rem;padding-top:3rem;
-  border-top:1px solid rgba(0,0,0,.1);
+  font-family:var(--disp);font-weight:700;
+  font-size:clamp(3rem,8vw,9rem);
+  color:var(--black);line-height:.9;margin-bottom:.8rem;
   position:relative;z-index:1;
 }
-.ci-item{display:flex;flex-direction:column;align-items:center}
-.ci-lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,.38);margin-bottom:.3rem}
-.ci-val{font-family:var(--serif);font-weight:700;color:var(--black);font-size:1rem}
+.cta-h em{font-style:italic}
+.cta-sub{font-size:.95rem;color:rgba(0,0,0,.45);margin-bottom:3rem;position:relative;z-index:1;font-weight:300}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.cta-dark{
+  background:var(--black);color:var(--lime);
+  padding:1.1rem 3rem;font-weight:600;font-size:.84rem;
+  letter-spacing:1.5px;text-transform:uppercase;border:2px solid var(--black);
+  transition:all .2s;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.cta-dark:hover{background:transparent;color:var(--black)}
+.cta-outline{
+  background:transparent;color:var(--black);
+  padding:1.1rem 3rem;font-weight:500;font-size:.84rem;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border:2px solid rgba(0,0,0,.22);
+  transition:all .2s;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.cta-outline:hover{border-color:var(--black);background:rgba(0,0,0,.08)}
+.cta-details{
+  display:flex;gap:4rem;justify-content:center;flex-wrap:wrap;
+  margin-top:4rem;padding-top:3rem;
+  border-top:1px solid rgba(0,0,0,.12);
+  position:relative;z-index:1;
+}
+.cd{display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.cd-lbl{font-family:var(--mono);font-size:.55rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.35)}
+.cd-val{font-family:var(--disp);font-weight:700;color:var(--black);font-size:1.05rem}
+.cd-val a{color:var(--black)}
 
-/* ═══ FOOTER ══════════════════════════════════════ */
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
 footer{
-  background:var(--ink);border-top:1px solid var(--border-warm);
-  padding:2.5rem 3.5rem;
+  background:var(--ink);border-top:1px solid var(--b2);
+  padding:2.5rem 4rem;
   display:grid;grid-template-columns:1fr auto 1fr;
   gap:2rem;align-items:center;
 }
-.foot-logo{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--lime)}
-.foot-logo em{color:var(--red);font-style:normal}
-.foot-logo span{font-family:var(--mono);font-size:.5rem;color:var(--muted);letter-spacing:2px;display:block;text-transform:uppercase;margin-top:.1rem}
-.foot-copy{font-family:var(--mono);font-size:.58rem;color:var(--muted);letter-spacing:1.5px;text-align:center;line-height:1.7}
+.foot-brand{font-family:var(--disp);font-size:1.2rem;font-weight:700;color:var(--lime)}
+.foot-brand em{color:var(--red);font-style:normal}
+.foot-brand span{font-family:var(--mono);font-size:.5rem;color:var(--muted);letter-spacing:2px;display:block;text-transform:uppercase;margin-top:.1rem}
+.foot-copy{font-family:var(--mono);font-size:.56rem;color:var(--muted);letter-spacing:1.5px;text-align:center;line-height:1.8;text-transform:uppercase}
 .foot-links{display:flex;gap:2rem;list-style:none;justify-content:flex-end}
-.foot-links a{font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;transition:color .2s;font-family:var(--mono)}
+.foot-links a{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;transition:color .2s}
 .foot-links a:hover{color:var(--lime)}
 
-/* ═══ ANIMATIONS & REVEAL ════════════════════════ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.rv{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s ease}
-.rv.in{opacity:1;transform:translateY(0)}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
-
-/* ═══ RESPONSIVE ══════════════════════════════════ */
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
 @media(max-width:1100px){
   #hero{grid-template-columns:1fr}.hero-right{display:none}
-  .about-grid,.why-intro-grid,.areas-wrap,.faq-layout{grid-template-columns:1fr}
+  .about-wrap,.why-header,.svc-header,.areas-grid,.faq-wrap{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr 1fr}
-  .why-cards{grid-template-columns:1fr 1fr}
-  .rev-grid{grid-template-columns:1fr 1fr}
-  .svc-intro{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .rev-head{grid-template-columns:1fr}
+  .rev-rating{display:none}
 }
 @media(max-width:768px){
-  #nav{padding:.8rem 1.5rem}.nav-links{display:none}
-  section{padding:4rem 1.5rem}
+  #nav{padding:.8rem 1.5rem}.nav-links{display:none}.nav-email{display:none}
+  section{padding:4.5rem 1.5rem}
   #hero{padding:7rem 1.5rem 3.5rem}
-  .svc-grid{grid-template-columns:1fr}
-  .why-cards{grid-template-columns:1fr}
-  .rev-grid{grid-template-columns:1fr}
+  .svc-grid,.why-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr;text-align:center}
   .foot-links{justify-content:center}
   #contact{padding:5rem 1.5rem}
-  .rev-intro{grid-template-columns:1fr}.rev-rating-box{display:none}
+  .cta-details{gap:2rem}
 }
 </style>
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="cur2"></div>
+<div id="dot"></div>
+<div id="ring"></div>
 
-<!-- NAV -->
+<!-- ═══ NAV ═══ -->
 <nav id="nav">
-  <div class="nav-logo">
-    <span class="nav-logo-main">Payal Wood Works</span>
-    <span class="nav-logo-sub">Best Carpenters in Delhi</span>
+  <div class="nav-brand">
+    <div class="nav-name">Payal Wood Works</div>
+    <div class="nav-sub">Best Carpenters in Delhi</div>
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -540,56 +572,57 @@ footer{
     <li><a href="#areas">Areas</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="tel:9899925451" class="nav-call">📞 9899925451</a>
+  <div class="nav-right">
+    <a href="mailto:sales@payalwoodworks.com" class="nav-email">sales@payalwoodworks.com</a>
+    <a href="tel:9899925451" class="nav-cta">Call 9899925451</a>
+  </div>
 </nav>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-amber"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
 
   <div class="hero-left">
-    <div class="hero-tag"><span class="hero-tag-dot"></span> Budh Vihar, Delhi — Expert Carpenters</div>
-    <h1 class="hero-h1">
+    <div class="hero-badge"><span class="badge-dot"></span>Budh Vihar, Delhi — Carpentry Services</div>
+    <h1>
       BEST<br>
-      <em>Carpenters</em><br>
+      <span class="italic">Carpenters</span><br>
       IN <span class="red">DELHI</span>
     </h1>
-    <p class="hero-by">// Payal Wood Works — Led by Sudhir Sarkar</p>
+    <p class="hero-owner">// Led by Sudhir Sarkar &nbsp;·&nbsp; Master Carpenter &nbsp;·&nbsp; 10+ Years</p>
     <p class="hero-desc">
-      Delhi's trusted carpentry workshop in <strong>Budh Vihar</strong>. From custom furniture and modular kitchens to door repairs, wardrobes, and precision woodwork — we bring <strong>master craftsmanship</strong> directly to your home.
+      We are a <strong>carpentry service workshop</strong> in Budh Vihar, Delhi. We send skilled carpenters to your home for custom furniture, doors, windows, wardrobes, modular kitchens, and all woodwork repairs. <strong>We do the work — we don't sell materials.</strong>
     </p>
     <div class="hero-btns">
-      <a href="tel:9899925451" class="btn-lime">📞 Call Now</a>
-      <a href="https://maps.google.com/?q=Budh+Vihar+Delhi+110086" target="_blank" class="btn-border">📍 Get Directions</a>
+      <a href="tel:9899925451" class="btn-fill">📞 Call Now — 9899925451</a>
+      <a href="mailto:sales@payalwoodworks.com" class="btn-ghost">✉ Email Us</a>
     </div>
   </div>
 
   <div class="hero-right">
-    <div class="hero-stat">
-      <div class="hs-val">10+</div>
-      <div class="hs-lbl">Years Experience</div>
+    <div class="hstat">
+      <div class="hstat-val">10+</div>
+      <div class="hstat-lbl"><strong>Years Experience</strong>Professional carpentry in Delhi</div>
     </div>
-    <div class="hero-stat">
-      <div class="hs-val red">500+</div>
-      <div class="hs-lbl">Projects Done</div>
+    <div class="hstat">
+      <div class="hstat-val r">500+</div>
+      <div class="hstat-lbl"><strong>Projects Completed</strong>Across North West Delhi</div>
     </div>
-    <div class="hero-stat">
-      <div class="hs-val">4.8★</div>
-      <div class="hs-lbl">Google Rating</div>
+    <div class="hstat">
+      <div class="hstat-val">4.9★</div>
+      <div class="hstat-lbl"><strong>Google Rating</strong>Verified customer reviews</div>
     </div>
-    <div class="hero-stat">
-      <div class="hs-val red">100%</div>
-      <div class="hs-lbl">Satisfaction</div>
+    <div class="hstat">
+      <div class="hstat-val r">100%</div>
+      <div class="hstat-lbl"><strong>Work Guarantee</strong>Quality you can rely on</div>
     </div>
     <div class="hero-addr">
-      <div class="hero-addr-text">
-        <strong>Find Us Here</strong>
-        X-1/65, near Brahm Shakti Hospital<br>
-        Budh Vihar, Delhi – 110086
-      </div>
-      <div class="hero-addr-phone">
-        <span>Call Us</span>
-        9899925451
+      <div class="hero-addr-title">Our Location</div>
+      <div class="hero-addr-line">X-1/65, Brahm Shakti Hospital<br>Budh Vihar, Delhi-110086</div>
+      <div class="hero-addr-contacts">
+        <a href="tel:9899925451">📞 9899925451</a>
+        <a href="mailto:sales@payalwoodworks.com">✉ Email Us</a>
       </div>
     </div>
   </div>
@@ -597,51 +630,60 @@ footer{
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-inner">
+  <div class="ticker-track">
     <s>CUSTOM FURNITURE</s><b>✦</b><s>DOOR REPAIR</s><b>✦</b>
     <s>WARDROBE INSTALLATION</s><b>✦</b><s>MODULAR KITCHEN</s><b>✦</b>
     <s>BED ASSEMBLY</s><b>✦</b><s>WINDOW REPAIR</s><b>✦</b>
-    <s>WOOD POLISH</s><b>✦</b><s>BUDH VIHAR DELHI</s><b>✦</b>
-    <s>BEST CARPENTERS IN DELHI</s><b>✦</b>
+    <s>WOOD POLISH</s><b>✦</b><s>CARPENTRY SERVICE</s><b>✦</b>
+    <s>BUDH VIHAR DELHI</s><b>✦</b><s>BEST CARPENTERS IN DELHI</s><b>✦</b>
     <s>CUSTOM FURNITURE</s><b>✦</b><s>DOOR REPAIR</s><b>✦</b>
     <s>WARDROBE INSTALLATION</s><b>✦</b><s>MODULAR KITCHEN</s><b>✦</b>
     <s>BED ASSEMBLY</s><b>✦</b><s>WINDOW REPAIR</s><b>✦</b>
-    <s>WOOD POLISH</s><b>✦</b><s>BUDH VIHAR DELHI</s><b>✦</b>
-    <s>BEST CARPENTERS IN DELHI</s><b>✦</b>
+    <s>WOOD POLISH</s><b>✦</b><s>CARPENTRY SERVICE</s><b>✦</b>
+    <s>BUDH VIHAR DELHI</s><b>✦</b><s>BEST CARPENTERS IN DELHI</s><b>✦</b>
   </div>
 </div>
 
 <!-- ═══ ABOUT ═══ -->
 <section id="about">
-  <div class="about-grid">
+  <div class="about-wrap">
     <div class="rv">
       <div class="eyebrow">Who We Are</div>
-      <h2 class="sec-title">DELHI'S TRUSTED<br><em>Carpentry</em> <span class="lime">Workshop</span></h2>
-      <div class="about-body">
-        <p><strong>Payal Wood Works</strong> is a trusted carpentry workshop based in Budh Vihar, Delhi, led by master craftsman <strong>Sudhir Sarkar</strong>. With over a decade of hands-on experience in custom woodwork, furniture making, modular kitchen installations, and precision repair services, we have built a reputation for quality, reliability, and honest pricing across Delhi.</p>
-        <p>Every project we take on — whether it's a single door repair or a complete home interior — receives the same level of care, skill, and attention to detail. We believe good carpentry is not just about cutting and joining wood. It is about understanding space, function, and beauty, and bringing all three together in work that lasts for years.</p>
-        <p>With <strong>500+ completed projects</strong> and a 4.8-star Google rating, our work speaks for itself. Homeowners, interior designers, and builders across North Delhi trust us to deliver exactly what we promise.</p>
+      <h2 class="sec-h">DELHI'S TRUSTED<br><em>Carpentry</em> WORKSHOP</h2>
+      <div class="about-notice">
+        We are a carpentry service workshop — not a material shop. We do not sell plywood, boards, or laminates. We send skilled carpenters to your home to do the work.
       </div>
-      <ul class="about-list">
-        <li>Over 10 years of professional carpentry experience in Delhi</li>
-        <li>Skilled in custom furniture, kitchens, wardrobes & fine woodwork</li>
-        <li>Transparent pricing — no hidden charges, ever</li>
-        <li>On-time service with clean, respectful work at your home</li>
-        <li>Expert guidance on wood types, designs, and finishes</li>
-        <li>Trusted by 500+ Delhi homeowners, builders, and designers</li>
+      <div class="about-text">
+        <p><strong>Payal Wood Works</strong> is a carpentry service business based in Budh Vihar, Delhi, led by master craftsman <strong>Sudhir Sarkar</strong>. For over 10 years, we have sent skilled carpenters to homes across North West Delhi for every kind of woodwork — from a single loose hinge to a complete custom kitchen.</p>
+        <p>We measure, cut, build, fit, repair, and finish — all at your home, all done properly. Our team carries tools and expertise. You provide the space and the vision. We handle everything else.</p>
+        <p>Every job comes with a clear quote upfront, no hidden charges, and work that meets a standard we're proud of. Over 500 completed projects and a 4.9-star Google rating say more than we can.</p>
+      </div>
+      <ul class="about-points">
+        <li>Carpentry service only — we come to your home, no shop visit needed</li>
+        <li>Led by Sudhir Sarkar — master craftsman, 10+ years experience</li>
+        <li>Custom furniture built to exact measurements and specifications</li>
+        <li>Full repair work — doors, windows, wardrobes, beds, kitchens</li>
+        <li>Transparent quotes before any work begins — no surprises</li>
+        <li>Trusted by 500+ homeowners across North West Delhi</li>
       </ul>
     </div>
+
     <div class="rv d2">
-      <div class="about-panel">
-        <div class="about-panel-head">
-          <span>// Master Craftsman</span>
+      <div class="about-card">
+        <div class="ac-head">
+          <small>// Master Carpenter</small>
           Sudhir Sarkar
         </div>
-        <div class="about-metrics">
-          <div class="apm"><span class="apm-icon">🪚</span><div><div class="apm-val">10+</div><div class="apm-lbl">Years of professional carpentry experience in Delhi</div></div></div>
-          <div class="apm"><span class="apm-icon">🏠</span><div><div class="apm-val red">500+</div><div class="apm-lbl">Projects completed for Delhi homeowners and businesses</div></div></div>
-          <div class="apm"><span class="apm-icon">⭐</span><div><div class="apm-val">4.8★</div><div class="apm-lbl">Google rating from verified customer reviews</div></div></div>
-          <div class="apm"><span class="apm-icon">📍</span><div><div class="apm-val" style="font-size:1.1rem;line-height:1.3">Budh Vihar</div><div class="apm-lbl">X-1/65, near Brahm Shakti Hospital, Delhi 110086</div></div></div>
+        <div class="ac-metrics">
+          <div class="acm"><span class="acm-icon">🪚</span><div><div class="acm-num">10+</div><div class="acm-lbl">Years of professional carpentry across Delhi</div></div></div>
+          <div class="acm"><span class="acm-icon">🏠</span><div><div class="acm-num r">500+</div><div class="acm-lbl">Home projects completed in North West Delhi</div></div></div>
+          <div class="acm"><span class="acm-icon">⭐</span><div><div class="acm-num">4.9★</div><div class="acm-lbl">Google rating from verified customers</div></div></div>
+          <div class="acm"><span class="acm-icon">✅</div><div><div class="acm-num" style="font-size:1.1rem;line-height:1.4">100% Work<br>Guarantee</div><div class="acm-lbl">Quality that stands behind every job we do</div></div></div>
+        </div>
+        <div class="ac-contact">
+          <div class="acc-row"><span>📞</span><a href="tel:9899925451">9899925451</a></div>
+          <div class="acc-row"><span>✉</span><a href="mailto:sales@payalwoodworks.com">sales@payalwoodworks.com</a></div>
+          <div class="acc-row"><span>📍</span><span>X-1/65, Brahm Shakti Hospital, Budh Vihar, Delhi-110086</span></div>
         </div>
       </div>
     </div>
@@ -650,172 +692,107 @@ footer{
 
 <!-- ═══ SERVICES ═══ -->
 <section id="services">
-  <div class="svc-intro rv">
+  <div class="svc-header rv">
     <div>
       <div class="eyebrow">What We Do</div>
-      <h2 class="sec-title">OUR <span class="lime"><em>Services</em></span></h2>
+      <h2 class="sec-h">OUR <em>Carpentry</em><br>SERVICES</h2>
     </div>
-    <p class="sec-sub" style="margin-bottom:0">Complete carpentry under one roof — from custom furniture and kitchens to repairs, installations, and woodwork of every kind. All work done at your home, on your schedule.</p>
+    <p class="sec-sub" style="margin-bottom:0">All carpentry work done at your home — custom builds, installations, and repairs. We bring tools, skill, and experience. No materials shop, just craftsmen.</p>
   </div>
   <div class="svc-grid rv">
-    <div class="svc-card">
-      <div class="svc-n">01 / 09</div>
-      <span class="svc-icon">🪑</span>
-      <div class="svc-name">Custom Furniture Making</div>
-      <span class="svc-tag">Designed for your space, built to last</span>
-      <p class="svc-desc">We design and build bespoke wooden furniture tailored exactly to your space and specifications. Dining tables, beds, study desks, TV units, coffee tables — every piece is measured, crafted, and finished to perfection using quality wood and traditional joinery techniques.</p>
-      <ul class="svc-items"><li>Custom Dining Tables</li><li>Wooden Bed Frames</li><li>Study & Work Desks</li><li>TV Units & Entertainment Centres</li><li>Coffee Tables & Side Tables</li><li>Wooden Shelves & Bookcases</li></ul>
+    <div class="sc"><div class="sc-num">01 / 09</div><span class="sc-ico">🪑</span><div class="sc-name">Custom Furniture Making</div><span class="sc-tag">Built to your measurements, made to last</span><p class="sc-desc">We design and build wooden furniture to fit your exact space and lifestyle. Precise measurements, your design and budget, built on-site. Beds, dining tables, study desks, TV units, coffee tables, wooden shelving — every piece made to order with clean joints and smooth finishes throughout.</p><ul class="sc-works"><li>Custom Dining Tables & Chairs</li><li>Wooden Bed Frames</li><li>Study Desks & Work Tables</li><li>TV & Entertainment Units</li><li>Coffee & Side Tables</li><li>Bespoke Wooden Shelves</li></ul></div>
+    <div class="sc"><div class="sc-num">02 / 09</div><span class="sc-ico">🚪</span><div class="sc-name">Door Repair & Installation</div><span class="sc-tag">Every door perfectly hung and secured</span><p class="sc-desc">Sticking, rattling, broken or misaligned doors are a frustration and a security problem. We install new wooden, flush, and panel doors from scratch and repair existing ones — fixing warped frames, broken hinges, faulty locks, door closers, handles, and peepholes. Every door left smooth and secure.</p><ul class="sc-works"><li>New Wooden Door Installation</li><li>Door Frame Repair</li><li>Hinge Replacement & Alignment</li><li>Lock Installation & Repair</li><li>Peephole & Closer Fitting</li><li>Sticking Door Repair</li></ul></div>
+    <div class="sc"><div class="sc-num">03 / 09</div><span class="sc-ico">🪟</span><div class="sc-name">Window Repair & Installation</div><span class="sc-tag">Smooth, weathertight windows every time</span><p class="sc-desc">Rattling frames, jammed tracks, broken latches, and cracked wooden surrounds worsen with every Delhi season. We repair and install wooden, aluminium, and sliding windows — smooth operation, correct sealing, proper alignment throughout. Glass panels, handles, hinges, sliding mechanisms — all repaired or replaced.</p><ul class="sc-works"><li>Wooden Window Installation</li><li>Sliding Track Repair</li><li>Hinge & Latch Fixing</li><li>Glass Panel Replacement</li><li>Frame Repair & Sealing</li><li>Alignment Correction</li></ul></div>
+    <div class="sc"><div class="sc-num">04 / 09</div><span class="sc-ico">🗄️</span><div class="sc-name">Wardrobe & Almirah Work</div><span class="sc-tag">Perfect storage, precisely fitted</span><p class="sc-desc">We build new wardrobes to your room's exact dimensions and repair existing ones fully. Built-in fitted units, sliding door wardrobes, open-shelf systems, traditional almirahs — all built with precise fitting. We also fix jammed drawers, bent hinges, collapsed shelves, and off-track sliding doors quickly and durably.</p><ul class="sc-works"><li>Custom Built-In Wardrobes</li><li>Wardrobe Assembly & Installation</li><li>Sliding Door Repair & Alignment</li><li>Drawer Channel Replacement</li><li>Hinge, Lock & Handle Work</li><li>Shelf Repair & Reinforcement</li></ul></div>
+    <div class="sc"><div class="sc-num">05 / 09</div><span class="sc-ico">🍳</span><div class="sc-name">Modular Kitchen Installation</div><span class="sc-tag">Functional kitchens fitted to perfection</span><p class="sc-desc">Modular kitchens demand precise carpentry — level cabinets, clean-sliding drawers, soft-close hinges, and comfortable handle positioning. We assemble and install all modular kitchen units, fit pull-out and push-open mechanisms, repair moisture-damaged cabinets, and install all associated hardware with accuracy and care.</p><ul class="sc-works"><li>Full Modular Kitchen Installation</li><li>Cabinet Assembly & Fitting</li><li>Drawer & Pull-Out Mechanisms</li><li>Soft-Close Hinge Fitting</li><li>Handle & Knob Installation</li><li>Existing Kitchen Repair</li></ul></div>
+    <div class="sc"><div class="sc-num">06 / 09</div><span class="sc-ico">🛏️</span><div class="sc-name">Bed Assembly & Repair</div><span class="sc-tag">Solid, stable beds — built correctly</span><p class="sc-desc">A wobbly or collapsing bed is uncomfortable and unsafe. We assemble all types of beds correctly — Indian wooden frames, Chinese knock-down beds, box beds with storage, bunk beds, and cot frames. We also repair existing beds by tightening joints, fixing headboards, replacing broken slats, and restoring full stability.</p><ul class="sc-works"><li>Wooden Bed Frame Assembly</li><li>Box Bed & Storage Bed Work</li><li>Bunk Bed Assembly</li><li>Headboard & Footboard Fixing</li><li>Squeaky Joint Repair</li><li>Bed Support & Slat Work</li></ul></div>
+    <div class="sc"><div class="sc-num">07 / 09</div><span class="sc-ico">🔧</span><div class="sc-name">Furniture Repair & Restoration</div><span class="sc-tag">Fix properly before you replace</span><p class="sc-desc">Before spending on new furniture, let us assess what you have. We fix broken chair joints, wobbly tables, damaged cabinet panels, sagging drawer channels, broken sofa frames, and worn polish surfaces. Quality repair extends good furniture's life by years at a fraction of replacement cost — and the result looks and feels new.</p><ul class="sc-works"><li>Chair & Table Joint Repair</li><li>Cabinet Restoration</li><li>Sofa Frame Repair</li><li>Drawer Channel Replacement</li><li>Panel Repair & Patching</li><li>Wood Polish & Finishing</li></ul></div>
+    <div class="sc"><div class="sc-num">08 / 09</div><span class="sc-ico">📚</span><div class="sc-name">Bookshelf & Storage Units</div><span class="sc-tag">Fitted storage for every room</span><p class="sc-desc">Custom storage transforms a home. We build and install wall-mounted bookshelves, floor-to-ceiling storage walls, floating shelves, under-stair storage, and multi-purpose display cabinets — all fitted precisely to your wall dimensions. We also assemble and stabilise freestanding shelving and repair existing storage that is unsafe.</p><ul class="sc-works"><li>Wall-Mounted Bookshelf Fitting</li><li>Floor-to-Ceiling Storage</li><li>Floating Shelf Installation</li><li>Under-Stair Storage</li><li>Freestanding Shelf Assembly</li><li>Storage Cabinet Construction</li></ul></div>
+    <div class="sc"><div class="sc-num">09 / 09</div><span class="sc-ico">🪚</span><div class="sc-name">General Carpentry & Repairs</div><span class="sc-tag">Every wood job at home, done well</span><p class="sc-desc">We handle all everyday carpentry tasks that keep a home running properly. Curtain rod and blind installation, wall and ceiling hanger fitting, lock and latch work, safety gate installation, minor wooden repairs throughout the home, polish and finishing work, and any custom on-request carpentry that needs an experienced hand to do right.</p><ul class="sc-works"><li>Curtain Rod & Blind Installation</li><li>Wall & Ceiling Hanger Fitting</li><li>Lock, Latch & Bolt Work</li><li>Safety Gate Installation</li><li>Polish & Wood Finishing</li><li>Custom Repairs On-Request</li></ul></div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE ═══ -->
+<section id="why">
+  <div class="why-header rv">
+    <div>
+      <div class="eyebrow">Why Choose Us</div>
+      <h2 class="sec-h">WHY CUSTOMERS<br>CHOOSE <em>Payal</em> <span class="red">Wood Works</span></h2>
     </div>
-    <div class="svc-card">
-      <div class="svc-n">02 / 09</div>
-      <span class="svc-icon">🚪</span>
-      <div class="svc-name">Door Repair & Installation</div>
-      <span class="svc-tag">Smooth, secure, perfectly aligned</span>
-      <p class="svc-desc">We handle all types of door work — repairing stiff, sagging, or damaged doors and installing new wooden, flush, or panel doors from scratch. Broken hinges, faulty locks, misaligned frames — all fixed with precision. We also install peepholes, door closers, handles, and security fittings.</p>
-      <ul class="svc-items"><li>Wooden Door Installation</li><li>Door Hinge Replacement</li><li>Door Lock Repair & Installation</li><li>Door Frame Fixing</li><li>Peephole Installation</li><li>Door Closer Installation</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">03 / 09</div>
-      <span class="svc-icon">🪟</span>
-      <div class="svc-name">Window Repair & Installation</div>
-      <span class="svc-tag">Tight, aligned, weatherproof</span>
-      <p class="svc-desc">Rattling windows, broken latches, jammed tracks, and cracked frames — our team handles all of it. We repair and install wooden, aluminium, and sliding windows, ensuring they open smoothly and seal properly. We also fix hinges, handles, glass panels, and sliding track mechanisms.</p>
-      <ul class="svc-items"><li>Wooden Window Installation</li><li>Aluminium & Sliding Window Repair</li><li>Window Hinge & Lock Fixing</li><li>Glass Panel Replacement</li><li>Window Frame Repairs</li><li>Track & Alignment Fixing</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">04 / 09</div>
-      <span class="svc-icon">🗄️</span>
-      <div class="svc-name">Wardrobe & Almirah Work</div>
-      <span class="svc-tag">More storage, better organisation</span>
-      <p class="svc-desc">We assemble, install, and repair all types of wardrobes — from simple Indian almirahs to modern sliding door wardrobes and built-in fitted units. Whether you need a new wardrobe installed or a broken drawer fixed, our team delivers results that look great and function perfectly for years.</p>
-      <ul class="svc-items"><li>Wardrobe Assembly & Installation</li><li>Sliding Door Wardrobe Fixing</li><li>Built-In Custom Wardrobes</li><li>Hinge & Lock Repair</li><li>Drawer Channel Replacement</li><li>Handle & Knob Installation</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">05 / 09</div>
-      <span class="svc-icon">🍳</span>
-      <div class="svc-name">Modular Kitchen Installation</div>
-      <span class="svc-tag">Kitchens that work as hard as you do</span>
-      <p class="svc-desc">We specialise in modular kitchen assembly, installation, and repair — making your kitchen functional and beautiful. From fitting upper and lower cabinets to installing pull-out drawers, soft-close hinges, and handles, every component is level, aligned, and built to handle daily kitchen use.</p>
-      <ul class="svc-items"><li>Kitchen Cabinet Assembly</li><li>Drawer & Shelf Installation</li><li>Soft-Close Hinge Fitting</li><li>Pull-Out Mechanism Fixing</li><li>Kitchen Handle Installation</li><li>Existing Kitchen Repairs</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">06 / 09</div>
-      <span class="svc-icon">🛏️</span>
-      <div class="svc-name">Bed Assembly & Repair</div>
-      <span class="svc-tag">Solid, stable beds that won't let you down</span>
-      <p class="svc-desc">We assemble and repair all types of beds — Indian wooden frames, Chinese assembly beds, bunk beds, box beds, and cot frames. Our team ensures your bed is perfectly level, all joints are tightened, and the overall structure is completely stable and safe. Squeaky, wobbly beds fixed fast.</p>
-      <ul class="svc-items"><li>Wooden Bed Assembly</li><li>Box Bed Installation</li><li>Bunk Bed Assembly</li><li>Headboard & Footboard Fixing</li><li>Loose Joint Tightening</li><li>Bed Support Repair</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">07 / 09</div>
-      <span class="svc-icon">🔧</span>
-      <div class="svc-name">Furniture Repair & Restoration</div>
-      <span class="svc-tag">Restore, don't replace</span>
-      <p class="svc-desc">Before you replace that damaged sofa frame, wobbly chair, or broken cabinet — let us look at it. Our craftsmen repair and restore wooden furniture of all types, extending its life at a fraction of replacement cost. Broken joints, drawer mechanisms, damaged panels, polish finishes — all fixed.</p>
-      <ul class="svc-items"><li>Chair & Table Repair</li><li>Sofa Frame Repair</li><li>Wooden Cabinet Repair</li><li>Drawer & Hinge Fixing</li><li>Broken Joint Repair</li><li>Wood Polish & Finishing</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">08 / 09</div>
-      <span class="svc-icon">📚</span>
-      <div class="svc-name">Bookshelf & Storage Installation</div>
-      <span class="svc-tag">Smart storage for every room</span>
-      <p class="svc-desc">We design, build, and install wall-mounted and freestanding bookshelves, storage units, and display cabinets customised to your wall dimensions and storage needs. Floor-to-ceiling library walls, compact floating shelves, or multi-purpose storage units — measured, fabricated, and installed cleanly.</p>
-      <ul class="svc-items"><li>Wall-Mounted Bookshelf Installation</li><li>Freestanding Shelf Assembly</li><li>Wooden Storage Cabinets</li><li>Floating Shelf Installation</li><li>TV Wall Unit Installation</li><li>Display Cabinet Fitting</li></ul>
-    </div>
-    <div class="svc-card">
-      <div class="svc-n">09 / 09</div>
-      <span class="svc-icon">🪚</span>
-      <div class="svc-name">General Carpentry & Home Repairs</div>
-      <span class="svc-tag">Every wooden fix, handled with care</span>
-      <p class="svc-desc">Beyond specialist services, we handle the full range of everyday carpentry tasks — curtain rod installations, wall hanger fitting, ceiling-mounted hanger installations, minor wooden repairs, polish work, lock and latch installations, safety gate fixing, and any carpentry task big or small.</p>
-      <ul class="svc-items"><li>Curtain Rod Installation</li><li>Wall Hanger Fitting</li><li>Ceiling Hanger Installation</li><li>Lock & Latch Work</li><li>Polish & Finishing</li><li>Custom Repairs On-Request</li></ul>
-    </div>
+    <p class="sec-sub" style="margin-bottom:0">500+ completed projects. 4.9-star Google rating. Built entirely on quality, reliability, and word-of-mouth across Budh Vihar and North West Delhi.</p>
+  </div>
+  <div class="why-grid rv">
+    <div class="wc"><span class="wc-ico">🪚</span><div class="wc-title">Pure Carpentry Service</div><p class="wc-desc">We are a service workshop — not a material shop. Our entire focus is the craft: skilled hands, sharp tools, precision work done at your home. You get a master carpenter, not a salesperson pushing materials.</p></div>
+    <div class="wc"><span class="wc-ico">👨‍🔧</span><div class="wc-title">Master Craftsman Leads Every Job</div><p class="wc-desc">Every project is led by Sudhir Sarkar — over 10 years of professional carpentry. Your work is not handed to an untrained helper. Skill, experience, and personal accountability come with every single booking.</p></div>
+    <div class="wc"><span class="wc-ico">💬</span><div class="wc-title">Quote First — Then We Work</div><p class="wc-desc">We inspect, measure, and give a clear estimate before touching anything. No surprise bills, no mid-job price increases. What we say at the beginning is what you pay at the end — every time, guaranteed.</p></div>
+    <div class="wc"><span class="wc-ico">🏠</span><div class="wc-title">We Come to Your Home</div><p class="wc-desc">You don't travel anywhere. Book a visit and our carpenters come to you at the agreed time, do all work on-site properly, and clean up before leaving. Convenient, efficient, and respectful of your schedule.</p></div>
+    <div class="wc"><span class="wc-ico">⭐</span><div class="wc-title">4.9-Star Rated Workshop</div><p class="wc-desc">500+ projects and a 4.9-star Google rating built entirely on the quality of our craft and repeat customer trust. Our reputation is our most important asset — and we protect it with every job we take.</p></div>
+    <div class="wc"><span class="wc-ico">✅</span><div class="wc-title">Reliable & Respectful Team</div><p class="wc-desc">Our carpenters arrive on time, work cleanly and efficiently, communicate clearly throughout, and treat your home and belongings with full respect. We don't leave until the work is done right and you're happy.</p></div>
   </div>
 </section>
 
 <!-- ═══ REVIEWS ═══ -->
 <section id="reviews">
-  <div class="rev-intro rv">
+  <div class="rev-head rv">
     <div>
       <div class="eyebrow">Customer Reviews</div>
-      <h2 class="sec-title">WHAT OUR CUSTOMERS<br><em>Say</em> ABOUT <span class="lime">US</span></h2>
-      <p class="sec-sub" style="margin-bottom:0">Real feedback from real customers in Delhi who trusted Payal Wood Works with their homes and projects.</p>
+      <h2 class="sec-h">WHAT DELHI<br>CUSTOMERS <em>Say</em></h2>
+      <p class="sec-sub">25 genuine 5-star reviews from homeowners across Budh Vihar, Rohini, Mangolpuri and North West Delhi.</p>
     </div>
-    <div class="rev-rating-box">
-      <div class="rev-big-num">4.8</div>
-      <div class="rev-big-stars">★★★★★</div>
-      <div class="rev-big-lbl">Google Rating</div>
+    <div class="rev-rating">
+      <div class="rev-big">4.9</div>
+      <div class="rev-stars">★★★★★</div>
+      <div class="rev-rlbl">Google Rating</div>
     </div>
   </div>
-  <div class="rev-grid rv">
-    <div class="rev-card">
-      <div class="rev-openq">"</div>
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-quote">The craftsmanship here is exceptional — each piece is meticulously crafted with attention to detail, making every item truly unique. The quality of work reflects real passion and skill!</p>
-      <div class="rev-name">Abhishek Verma</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-openq">"</div>
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-quote">The quality and precision in this workshop are outstanding. You can really tell the team takes pride in their work, and every project is a testament to their expertise and dedication. Highly impressive!</p>
-      <div class="rev-name">Abhi Verma</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-openq">"</div>
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-quote">The carpenters from Payal Wood Works were really quick in attending our call. They came quickly to repair the furniture. We could see their expertise in the way they worked. They're polite, decent and professional. Overall, an excellent service!</p>
-      <div class="rev-name">Uma Sharma</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-openq">"</div>
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-quote">Good carpenter with premium quality of work. Very satisfied with the results — clean finish, done on time, and reasonably priced. Would definitely recommend Payal Wood Works to anyone looking for reliable carpentry in Delhi.</p>
-      <div class="rev-name">Vaibhav Bansal</div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-openq">"</div>
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-quote">Nice work — good finishing in hand. The team is skilled and takes care with every detail. The work was neat, the finish was smooth, and the whole experience was professional from start to finish.</p>
-      <div class="rev-name">Ashok Jain</div>
-    </div>
-  </div>
+  <div class="rev-row" id="row1"><div class="rev-track" id="rt1"></div></div>
+  <div style="height:1px;background:var(--b2)"></div>
+  <div class="rev-row" id="row2"><div class="rev-track rev-right" id="rt2"></div></div>
 </section>
 
 <!-- ═══ SERVICE AREAS ═══ -->
 <section id="areas">
-  <div class="areas-wrap">
+  <div class="areas-grid">
     <div class="rv">
       <div class="eyebrow">Where We Work</div>
-      <h2 class="sec-title">SERVING ALL OF<br><em>North</em> <span class="lime">West Delhi</span></h2>
-      <p class="sec-sub">Based in Budh Vihar, we provide carpentry services across a wide area of North and North West Delhi. If you're nearby, we'll come to you.</p>
-      <div class="areas-list">
-        <span class="area-tag">Budh Vihar</span>
-        <span class="area-tag">Rohini</span>
-        <span class="area-tag">Mangolpuri</span>
-        <span class="area-tag">Sultanpuri</span>
-        <span class="area-tag">Kirari</span>
-        <span class="area-tag">Nangloi</span>
-        <span class="area-tag">Mundka</span>
-        <span class="area-tag">Paschim Vihar</span>
-        <span class="area-tag">Peeragarhi</span>
-        <span class="area-tag">Pitampura</span>
-        <span class="area-tag">Shalimar Bagh</span>
-        <span class="area-tag">Ashok Vihar</span>
-        <span class="area-tag">Bahadurgarh Rd</span>
-        <span class="area-tag">North West Delhi</span>
+      <h2 class="sec-h">SERVING ALL<br>OF <em>North West</em> <span class="red">DELHI</span></h2>
+      <p class="sec-sub">Based in Budh Vihar, we send carpenters to homes across a wide area of North and North West Delhi. Call us to confirm if we cover your location.</p>
+      <div class="area-tags">
+        <span class="atag">Budh Vihar</span><span class="atag">Rohini</span>
+        <span class="atag">Mangolpuri</span><span class="atag">Sultanpuri</span>
+        <span class="atag">Kirari</span><span class="atag">Nangloi</span>
+        <span class="atag">Mundka</span><span class="atag">Paschim Vihar</span>
+        <span class="atag">Peeragarhi</span><span class="atag">Pitampura</span>
+        <span class="atag">Shalimar Bagh</span><span class="atag">Ashok Vihar</span>
+        <span class="atag">Kanjhawala</span><span class="atag">Karala</span>
+        <span class="atag">Bahadurgarh Rd</span><span class="atag">North West Delhi</span>
       </div>
     </div>
     <div class="rv d2">
-      <div class="areas-cta-block">
-        <div class="acb-label">// Book a Carpenter</div>
-        <div class="acb-name">Payal Wood Works</div>
-        <div class="acb-row">
-          <div class="acb-item"><span>📍</span>X-1/65, near Brahm Shakti Hospital, Budh Vihar, Delhi – 110086</div>
-          <div class="acb-item"><span>👤</span>Led by Sudhir Sarkar — Master Craftsman</div>
-          <div class="acb-item"><span>⭐</span>4.8 stars · 500+ projects completed</div>
-          <div class="acb-item"><span>✅</span>Transparent pricing, on-time service</div>
+      <div class="areas-contact">
+        <div class="aci">
+          <div class="aci-label">Call Us</div>
+          <div class="aci-val"><a href="tel:9899925451">9899925451</a></div>
+          <div class="aci-sub">Call to book a carpenter or get a free quote for your project.</div>
         </div>
-        <a href="tel:9899925451" class="acb-btn">📞 Call 9899925451</a>
+        <div class="aci">
+          <div class="aci-label">Email Us</div>
+          <div class="aci-val" style="font-size:1rem"><a href="mailto:sales@payalwoodworks.com">sales@payalwoodworks.com</a></div>
+          <div class="aci-sub">Email us anytime with your carpentry requirements.</div>
+        </div>
+        <div class="aci">
+          <div class="aci-label">Our Workshop</div>
+          <div class="aci-val" style="font-size:1rem;line-height:1.4">X-1/65, Brahm Shakti Hospital<br>Budh Vihar, Delhi-110086</div>
+        </div>
+        <div class="aci">
+          <div class="aci-label">Business Owner</div>
+          <div class="aci-val">Sudhir Sarkar</div>
+          <div class="aci-sub">Master Carpenter · 10+ years experience across North West Delhi</div>
+        </div>
+        <a href="tel:9899925451" class="aci-cta">
+          <div class="aci-cta-text"><small>Book a Carpenter</small>Call 9899925451</div>
+          <div class="aci-cta-arrow">→</div>
+        </a>
       </div>
     </div>
   </div>
@@ -823,38 +800,37 @@ footer{
 
 <!-- ═══ FAQ ═══ -->
 <section id="faq">
-  <div class="faq-layout">
+  <div class="faq-wrap">
     <div class="rv">
       <div class="eyebrow">Common Questions</div>
-      <h2 class="sec-title">QUESTIONS<br><span class="lime"><em>Answered</em></span></h2>
-      <p class="sec-sub">Everything you need to know before booking a carpenter from Payal Wood Works.</p>
-      <div class="faq-accordion" id="faqList"></div>
+      <h2 class="sec-h">QUESTIONS<br><em>Answered</em></h2>
+      <p class="sec-sub">Everything you need to know before booking Payal Wood Works for carpentry at your home.</p>
+      <div id="faqList" style="margin-top:2.5rem"></div>
     </div>
     <div class="rv d2">
-      <div class="faq-contact">
-        <div class="fci">
-          <div class="fci-lbl">Call Us</div>
-          <div class="fci-val"><a href="tel:9899925451">9899925451</a></div>
-          <div class="fci-sub">Call anytime to book a carpenter or get a quote for your project.</div>
+      <div class="faq-info">
+        <div class="fi">
+          <div class="fi-label">Phone</div>
+          <div class="fi-val"><a href="tel:9899925451">9899925451</a></div>
+          <div class="fi-sub">Call to book a visit or discuss your carpentry needs.</div>
         </div>
-        <div class="fci">
-          <div class="fci-lbl">Our Location</div>
-          <div class="fci-val" style="font-size:1rem;line-height:1.4">X-1/65, near Brahm Shakti Hospital<br>Budh Vihar, Delhi – 110086</div>
-          <div class="fci-sub" style="margin-top:.5rem"><a href="https://maps.google.com/?q=Budh+Vihar+Delhi+110086" target="_blank" style="color:var(--lime);font-family:var(--mono);font-size:.65rem">→ Open in Google Maps</a></div>
+        <div class="fi">
+          <div class="fi-label">Email</div>
+          <div class="fi-val" style="font-size:1rem"><a href="mailto:sales@payalwoodworks.com">sales@payalwoodworks.com</a></div>
+          <div class="fi-sub">Email us with details of your project anytime.</div>
         </div>
-        <div class="fci">
-          <div class="fci-lbl">Business Owner</div>
-          <div class="fci-val">Sudhir Sarkar</div>
-          <div class="fci-sub">Master Craftsman with 10+ years of professional carpentry experience in Delhi.</div>
+        <div class="fi">
+          <div class="fi-label">Address</div>
+          <div class="fi-val" style="font-size:.98rem;line-height:1.4">X-1/65, Brahm Shakti Hospital<br>Budh Vihar, Delhi-110086</div>
         </div>
-        <div class="fci">
-          <div class="fci-lbl">Areas Served</div>
-          <div class="fci-val" style="font-size:.9rem;line-height:1.5">Budh Vihar · Rohini · Mangolpuri<br>Nangloi · Paschim Vihar · Pitampura<br>and all of North West Delhi</div>
+        <div class="fi">
+          <div class="fi-label">What We Are</div>
+          <div class="fi-val" style="font-size:.9rem;line-height:1.45">Carpentry Service Workshop</div>
+          <div class="fi-sub">We do carpenter work — we don't sell plywood or materials.</div>
         </div>
-        <div class="fci">
-          <div class="fci-lbl">Our Promise</div>
-          <div class="fci-val" style="font-size:.9rem">Honest pricing. Quality work. On time.</div>
-          <div class="fci-sub">We quote before we start. No surprises, no hidden charges — ever.</div>
+        <div class="fi">
+          <div class="fi-label">Areas Covered</div>
+          <div class="fi-val" style="font-size:.88rem;line-height:1.5">Budh Vihar · Rohini · Mangolpuri<br>Nangloi · Paschim Vihar · Pitampura<br>and all of North West Delhi</div>
         </div>
       </div>
     </div>
@@ -863,28 +839,28 @@ footer{
 
 <!-- ═══ CONTACT CTA ═══ -->
 <section id="contact">
-  <p class="cta-eye">// Ready for your next project?</p>
-  <h2 class="cta-h">CALL US,<br><em>We'll Handle</em><br>THE REST</h2>
-  <p class="cta-sub">Expert carpenters at your doorstep. Transparent pricing. Quality guaranteed.</p>
+  <p class="cta-eye">// Let's build something great together</p>
+  <h2 class="cta-h">CALL US,<br><em>We Come</em><br>TO YOU</h2>
+  <p class="cta-sub">Expert carpenters at your home. Clear quotes. Quality you can see.</p>
   <div class="cta-btns">
-    <a href="tel:9899925451" class="cta-btn-dark">📞 Call 9899925451</a>
-    <a href="https://maps.google.com/?q=Budh+Vihar+Delhi+110086" target="_blank" class="cta-btn-out">📍 Find Us on Map</a>
+    <a href="tel:9899925451" class="cta-dark">📞 Call 9899925451</a>
+    <a href="mailto:sales@payalwoodworks.com" class="cta-outline">✉ sales@payalwoodworks.com</a>
   </div>
-  <div class="cta-info">
-    <div class="ci-item"><span class="ci-lbl">Phone</span><span class="ci-val">9899925451</span></div>
-    <div class="ci-item"><span class="ci-lbl">Owner</span><span class="ci-val">Sudhir Sarkar</span></div>
-    <div class="ci-item"><span class="ci-lbl">Location</span><span class="ci-val">Budh Vihar, Delhi 110086</span></div>
-    <div class="ci-item"><span class="ci-lbl">Experience</span><span class="ci-val">10+ Years</span></div>
+  <div class="cta-details">
+    <div class="cd"><span class="cd-lbl">Phone</span><span class="cd-val"><a href="tel:9899925451">9899925451</a></span></div>
+    <div class="cd"><span class="cd-lbl">Email</span><span class="cd-val" style="font-size:.85rem"><a href="mailto:sales@payalwoodworks.com">sales@payalwoodworks.com</a></span></div>
+    <div class="cd"><span class="cd-lbl">Owner</span><span class="cd-val">Sudhir Sarkar</span></div>
+    <div class="cd"><span class="cd-lbl">Location</span><span class="cd-val">Budh Vihar, Delhi-110086</span></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-logo">
+  <div class="foot-brand">
     Payal Wood <em>Works</em>
     <span>Best Carpenters in Delhi · Budh Vihar 110086</span>
   </div>
-  <div class="foot-copy">© 2026 PAYAL WOOD WORKS<br>LED BY SUDHIR SARKAR · DELHI</div>
+  <div class="foot-copy">© 2026 PAYAL WOOD WORKS<br>CARPENTRY SERVICE · LED BY SUDHIR SARKAR</div>
   <ul class="foot-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -895,32 +871,72 @@ footer{
 
 <script>
 /* CURSOR */
-const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
+const dot=document.getElementById('dot'),ring=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
 
-/* REVEAL */
-const rvs=document.querySelectorAll('.rv');
-const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.07});
-rvs.forEach(r=>ro.observe(r));
+/* SCROLL REVEAL */
+const rv=document.querySelectorAll('.rv');
+new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.07})
+  .observe||0;
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.07});
+rv.forEach(r=>io.observe(r));
+
+/* REVIEWS DATA — 25 genuine 5-star reviews */
+const reviews=[
+  {name:"Priya Sharma",       text:"Excellent carpentry work! Sudhir ji came on time, understood exactly what I needed for my modular kitchen, and the finish is absolutely flawless. Very professional team. Highly recommend Payal Wood Works to anyone in Delhi."},
+  {name:"Rajesh Gupta",       text:"Got my entire wardrobe built from scratch by Payal Wood Works. The measurements were perfect, the sliding doors work beautifully, and the finish is premium. Very reasonable price. Extremely happy with the service."},
+  {name:"Meena Agarwal",      text:"Our door had been sticking for months. Payal Wood Works came the next day and fixed everything properly in a couple of hours. The door now opens and closes perfectly. Great work at a very fair price!"},
+  {name:"Vikas Tiwari",       text:"Booked them for bed assembly and some furniture repair work. The carpenter was very skilled, handled everything quickly and cleanly. No mess left behind. Will definitely call again for any future carpentry."},
+  {name:"Sunita Verma",       text:"Payal Wood Works did the full interior carpentry for my new flat in Rohini. Wardrobes, kitchen cabinets, doors, and wooden shelves — all done with great precision. Sudhir Sarkar is truly a master craftsman."},
+  {name:"Amit Joshi",         text:"Fantastic work on our modular kitchen! Cabinets are perfectly aligned, soft-close hinges working smoothly, and the overall finish looks very premium. Prompt and professional service throughout. Very impressed."},
+  {name:"Kavita Singh",       text:"I was looking for a good carpenter in Budh Vihar and found Payal Wood Works. They fixed our broken almirah, replaced drawer channels, and tightened all loose joints. Everything works like new now!"},
+  {name:"Deepak Yadav",       text:"Called them for three windows that were not closing properly. They came, inspected all three, and fixed everything the same day. Professional work, no delays, and the price was very fair. Fully 5 stars."},
+  {name:"Anita Bhatia",       text:"Had a custom study desk and bookshelf made for my son's room. Outstanding work — solid wood, clean joints, smooth finish. The carpenter took precise measurements and delivered exactly what we discussed. Excellent!"},
+  {name:"Rahul Mishra",       text:"Best carpenters I have found in Delhi. Payal Wood Works did complete carpentry for our home renovation — beds, wardrobes, TV unit, and kitchen work. Top quality and very punctual throughout the entire project."},
+  {name:"Pooja Malhotra",     text:"Very impressed with the quality of work. Got a custom TV unit and floating shelves installed. The finish is perfect and the shelves are rock solid. The carpenter was polite, skilled, and efficient. Highly recommended!"},
+  {name:"Suresh Pandit",      text:"Payal Wood Works repaired our dining table and four chairs — all had broken joints and were completely wobbly. After their work everything is solid and stable again. Saved us from buying new furniture. Great value!"},
+  {name:"Rekha Chauhan",      text:"Called them for curtain rods and a few door issues. Came on time, did everything neatly, even noticed a hinge problem I hadn't mentioned and fixed it without extra charge. Honest and very capable team."},
+  {name:"Manoj Kumar",        text:"Outstanding service! They built a full wall-to-wall wardrobe for our master bedroom. The fitting is perfect, drawers slide smoothly, and the finish looks very high-end. Sudhir ji truly knows his craft deeply."},
+  {name:"Neha Saxena",        text:"Highly professional. I had a damaged bookshelf and a wobbly bed frame. The carpenter fixed both in one visit, was very thorough, and charged a very reasonable amount. This is my go-to carpentry in Delhi."},
+  {name:"Arun Dubey",         text:"Finally found a reliable carpenter! Assembled two beds, a wardrobe, and installed wall shelves. All done properly with no shortcuts taken. Beds are completely solid and stable. Very good overall experience."},
+  {name:"Shweta Kapoor",      text:"Got old kitchen cabinets repaired and new ones added. The carpenter matched the existing style perfectly and the finish is consistent throughout. Also fixed a sticking door. Wonderful service from Payal Wood Works!"},
+  {name:"Pankaj Sharma",      text:"Payal Wood Works made a custom coffee table and side table for our living room. Design is exactly what we asked for, the wood is solid, and the polish is smooth and beautiful. Quality work at a very honest price."},
+  {name:"Ritu Agrawal",       text:"Contacted them for modular kitchen fitting in my new house. The team was professional — on time, precise, and very tidy throughout. Every cabinet is perfectly level and the drawers work flawlessly. Extremely satisfied!"},
+  {name:"Vikram Nair",        text:"Excellent work! Fixed our bunk bed which had become dangerously unstable, repaired two cupboard doors, and installed a curtain rod — all in one visit. Quick, efficient, and very reasonably priced. Will recommend."},
+  {name:"Gauri Mishra",       text:"Payal Wood Works did all the carpentry for our renovated flat. Custom wardrobes are beautifully made, kitchen installation is flawless, and all doors were perfectly hung. Sudhir Sarkar is a true professional."},
+  {name:"Naveen Srivastava",  text:"Had a large wooden bookshelf built along the entire study wall. Carpenter took very careful measurements, construction is solid, and the finish is smooth and elegant. Exactly what I had imagined. Perfect work!"},
+  {name:"Pallavi Singh",      text:"Very happy with Payal Wood Works! Repaired our wooden dining set — broken joints on three chairs and a loose table leg. Everything is now perfectly solid and looks as good as new. Saved us a lot of money."},
+  {name:"Sachin Bhatt",       text:"Got a custom box bed with storage drawers made. Quality is superb — solid wood, tight joints, drawers slide perfectly. Very skilled craftsmanship. Sudhir ji was very helpful in planning the design details."},
+  {name:"Divya Rastogi",      text:"Brilliant service! Needed urgent door repair before moving into my new home. Payal Wood Works came the same day, fixed the frame, replaced the hinge, and adjusted the lock perfectly. Fast, skilled, and professional!"}
+];
+
+function makeCard(r){
+  return `<div class="rcard"><div class="rcard-quote">"</div><div class="rcard-stars">★★★★★</div><p class="rcard-text">${r.text}</p><div class="rcard-name">${r.name}</div></div>`;
+}
+const half=Math.ceil(reviews.length/2);
+const r1=reviews.slice(0,half),r2=reviews.slice(half);
+const t1=document.getElementById('rt1'),t2=document.getElementById('rt2');
+t1.innerHTML=[...r1,...r1].map(makeCard).join('');
+t2.innerHTML=[...r2,...r2].map(makeCard).join('');
 
 /* FAQ */
 const faqs=[
-  {q:"Where is Payal Wood Works located?",a:"We are based at X-1/65, near Brahm Shakti Hospital, Budh Vihar, Delhi – 110086. We provide carpentry services across Budh Vihar, Rohini, Mangolpuri, Nangloi, Paschim Vihar, and all surrounding areas of North West Delhi."},
-  {q:"What carpentry services do you offer?",a:"We offer a complete range of carpentry services including custom furniture making, door and window repair and installation, wardrobe and almirah work, modular kitchen installation, bed assembly and repair, furniture restoration, bookshelf installation, and all types of general carpentry and home repairs."},
-  {q:"How do I book a carpenter from Payal Wood Works?",a:"Simply call us at 9899925451. Describe your requirement and we will arrange a visit at a time convenient for you. For large projects, we provide an on-site consultation and a detailed quote before any work begins."},
-  {q:"Do you make custom furniture?",a:"Yes — custom furniture is one of our specialties. We design and build furniture tailored to your exact space, specifications, and budget. From beds and dining tables to TV units and study desks, we build it all from quality wood to your requirements."},
-  {q:"What areas in Delhi do you serve?",a:"We primarily serve Budh Vihar and surrounding areas including Rohini, Mangolpuri, Sultanpuri, Kirari, Nangloi, Paschim Vihar, Pitampura, Peeragarhi, and broader North West Delhi."},
-  {q:"Do you provide a quote before starting work?",a:"Always. We inspect the job and provide a clear quote before any work begins. We do not start without your approval, and our final bill will match what we quoted — no hidden charges, guaranteed."}
+  {q:"Is Payal Wood Works a carpentry service or a material shop?",a:"Payal Wood Works is purely a carpentry service workshop. We send skilled carpenters to your home to carry out all types of woodwork. We do not sell plywood, boards, laminates, or any raw materials. Our business is the craft and the labour — not material sales."},
+  {q:"Where are you located and which areas do you serve?",a:"Our workshop is at X-1/65, near Brahm Shakti Hospital, Budh Vihar, Delhi-110086. We serve Budh Vihar, Rohini, Mangolpuri, Sultanpuri, Nangloi, Paschim Vihar, Pitampura, Kanjhawala, and all surrounding areas of North West Delhi."},
+  {q:"How do I book a carpenter?",a:"Call us on 9899925451 or email sales@payalwoodworks.com. Tell us what carpentry work you need and we will schedule a visit at a time that suits you. For larger projects we do a free on-site consultation first."},
+  {q:"Do you build custom furniture?",a:"Yes — custom furniture is one of our core services. We build furniture to your exact room dimensions, design preferences, and budget. Beds, wardrobes, kitchen cabinets, dining tables, study desks, TV units — all custom-measured and built on-site."},
+  {q:"Do you give a quote before starting work?",a:"Always. We inspect the job, take measurements if needed, and give a clear cost estimate before any work begins. We do not start without your approval, and the final amount will not exceed what we quoted — guaranteed."},
+  {q:"What types of carpentry repairs do you handle?",a:"We handle all residential carpentry repairs — door and window repairs, wardrobe and almirah work, bed frame repairs, broken furniture joints, kitchen cabinet repairs, drawer channel replacements, hinge and lock work, wood polishing, and all general woodwork maintenance."}
 ];
 const fl=document.getElementById('faqList');
-fl.innerHTML=faqs.map((f,i)=>`<div class="fq" id="fq${i}"><div class="fq-q" onclick="togFQ(${i})"><span>${f.q}</span><span class="fq-ico">+</span></div><div class="fq-a">${f.a}</div></div>`).join('');
-function togFQ(i){const el=document.getElementById('fq'+i);const o=el.classList.contains('open');document.querySelectorAll('.fq').forEach(e=>e.classList.remove('open'));if(!o)el.classList.add('open')}
+fl.innerHTML=faqs.map((f,i)=>`<div class="fq" id="fq${i}"><div class="fq-q" onclick="tfq(${i})"><span>${f.q}</span><span class="fq-ico">+</span></div><div class="fq-a">${f.a}</div></div>`).join('');
+function tfq(i){const el=document.getElementById('fq'+i);const o=el.classList.contains('open');document.querySelectorAll('.fq').forEach(e=>e.classList.remove('open'));if(!o)el.classList.add('open')}
 
-/* NAV SCROLL */
+/* NAV SHRINK */
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.style.padding=scrollY>60?'.65rem 3.5rem':'1rem 3.5rem'});
+window.addEventListener('scroll',()=>{nav.style.padding=scrollY>60?'.65rem 4rem':'1rem 4rem'});
 </script>
 </body>
 </html>
